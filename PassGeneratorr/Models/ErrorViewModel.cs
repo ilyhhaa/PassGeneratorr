@@ -1,4 +1,4 @@
-namespace PassGeneratorr.Models
+namespace PassGenerator.Models
 {
     public class ErrorViewModel
     {

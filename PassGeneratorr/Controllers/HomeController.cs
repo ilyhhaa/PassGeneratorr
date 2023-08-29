@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using PassGeneratorr.Models;
+using PassGenerator.Models;
 using System.Diagnostics;
 
-namespace PassGeneratorr.Controllers
+namespace PassGenerator.Controllers
 {
     public class HomeController : Controller
     {

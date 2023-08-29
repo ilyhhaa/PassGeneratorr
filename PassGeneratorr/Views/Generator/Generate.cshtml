@@ -1,0 +1,38 @@
+﻿@model PassGenerator.Models.PassModel
+
+
+<html>
+<head>
+
+
+</head>
+
+
+<body>
+    <h2>Generate Password</h2>
+
+
+   
+        @using (Html.BeginForm("Generate", "Generator", FormMethod.Get))
+        {
+
+        <div class="form-group">
+
+            <label for="size"> Beer Price </label>
+            <input type="text" class="form-control" id="size" name="size" value="@Model.size">
+
+
+        </div>
+
+
+        <button type="submit" class="btn btn-info" id="Generate" value="Generate" name="Calculate">Calculate Beer</button>
+
+        }
+            
+
+
+         
+        
+    </div>
+        }
+</body>
