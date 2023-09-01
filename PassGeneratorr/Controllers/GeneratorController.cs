@@ -26,7 +26,7 @@ namespace PassGenerator.Controllers
             model.GeneratingPass = res;
 
             
-            return View(model.GeneratingPass);
+            return View(res);
 
 
             
