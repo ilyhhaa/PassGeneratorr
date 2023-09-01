@@ -24,9 +24,9 @@ namespace PassGenerator.Controllers
 
             var res = chars.ToString();
             model.GeneratingPass = res;
-
+            ViewData["Password"] = model.GeneratingPass;
             
-            return View(res);
+            return View();
 
 
             

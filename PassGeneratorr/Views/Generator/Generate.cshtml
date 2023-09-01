@@ -8,7 +8,14 @@
 </head>
 <body>
     
-    <p>@Model.GeneratingPass</p>
+    <div class="form-group">
+
+        <label for="Generate"> Beer Quantity </label>
+        <input type="text" class="form-control" id="size" name="size" value="@Model.size">
+    </div>
+        
+
+    <h2>@ViewData["Password"]</h2>
 
 </body>
 </html>
