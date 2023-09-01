@@ -6,23 +6,27 @@ namespace PassGenerator.Controllers
 {
     public class GeneratorController : Controller
     {
-        [HttpGet]
+        [HttpPost]
         public async Task<IActionResult> Generate (PassModel model, Random random)
         {
             
             var AlphToCharArray = model.chars.ToCharArray();
 
-           
+           List<char> chars = new List<char>();
 
             for (int i = 0; i < model.size; i++)
             {
                 int num = random.Next(0, AlphToCharArray.Length);
 
-                model.ResultCharsList.Add(AlphToCharArray[num]);
+                chars.Add(AlphToCharArray[num]);
 
             }
+
+            var res = chars.ToString();
+            model.GeneratingPass = res;
+
             
-            return View(model);
+            return View(model.GeneratingPass);
 
 
             
