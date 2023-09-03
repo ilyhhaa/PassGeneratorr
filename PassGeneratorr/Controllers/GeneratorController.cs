@@ -1,36 +1,52 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using PassGenerator.Models;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 
 namespace PassGenerator.Controllers
 {
     public class GeneratorController : Controller
     {
-        [HttpPost]
-        public async Task<IActionResult> Generate (PassModel model, Random random)
+
+        public async Task Generate ()
         {
-            
+
+            string form = @"<form method='post'>
+                
+               
+                <input type='submit' value='Send' />
+            </form>";
+            Response.ContentType = "text/html;charset=utf-8";
+            await Response.WriteAsync(form);
+        }
+
+
+        [HttpPost]
+        public string Generate(PassModel model, Random random,List<char> values)
+        {
             var AlphToCharArray = model.chars.ToCharArray();
 
-           List<char> chars = new List<char>();
+            string result = " ";
 
-            for (int i = 0; i < model.size; i++)
+            for (int i = 0; i <= model.size; i++)
             {
                 int num = random.Next(0, AlphToCharArray.Length);
 
-                chars.Add(AlphToCharArray[num]);
+                values.Add(AlphToCharArray[num]);
 
+                result += values[i];
             }
-
-            var res = chars.ToString();
-            model.GeneratingPass = res;
-            ViewData["Password"] = model.GeneratingPass;
             
-            return View();
+            return result;
 
-
-            
-            
         }
+
+
     }
+    
 }
+
+
+
+
+
