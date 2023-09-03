@@ -12,7 +12,8 @@ namespace PassGenerator.Controllers
         {
 
             string form = @"<form method='post'>
-                
+
+                <p> Input password length <input type='number' name='size' /> </p>
                
                 <input type='submit' value='Send' />
             </form>";
@@ -28,7 +29,7 @@ namespace PassGenerator.Controllers
 
             string result = " ";
 
-            for (int i = 0; i <= model.size; i++)
+            for (int i = 0; i < model.size; i++)
             {
                 int num = random.Next(0, AlphToCharArray.Length);
 
